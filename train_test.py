@@ -43,19 +43,19 @@ parser.add_argument('--num_classes', type=int,
                     default=14, help='number of labels')
 parser.add_argument('--output_dir', type=str,
                     help='output dir')
-parser.add_argument('--max_epochs', type=int, default=2,
+parser.add_argument('--max_epochs', type=int, default=100,
                     help='maximum epoch number to train')
 parser.add_argument('--batch_size', type=int, default=24,
                     help='batch_size per gpu')
-parser.add_argument('--base_lr', type=float,  default=0.01,
+parser.add_argument('--base_lr', type=float,  default=0.001,
                     help='classification network learning rate')
 parser.add_argument('--img_size', type=int, default=224,
                     help='input patch size of network input')
 parser.add_argument('--seed', type=int, default=1234,
                     help='random seed')
-parser.add_argument("--exp_name", type=str, default="test",
+parser.add_argument("--exp_name", type=str, default="",
                     help="experiment name")
-parser.add_argument("--num_trial", type=int, default=2,
+parser.add_argument("--num_trial", type=int, default=10,
                     help="number of trials")
 parser.add_argument("--device", type=str, default="cuda",
                     help="cpu|cuda")

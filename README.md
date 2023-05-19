@@ -33,7 +33,7 @@ Run scripts as follows:
 python train_test.py \
 --dataset_name ChestXray14 \
 --model_name resnet18 \
---isinit \
+--dataset_path /path/to/dataset \
 --normalization imagenet \
 --batch_size 24 \
 --base_lr 0.01 \

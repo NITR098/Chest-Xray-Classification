@@ -67,6 +67,8 @@ parser.add_argument("--test_list", type=str, default=None,
                     help="file for test list")
 parser.add_argument("--in_chans", type=int, default=1, 
                     help="input data channel numbers")
+parser.add_argument("--dataset_path", type=str, default="./images",
+                    help="dataset path")
 
 
 args = parser.parse_args()
@@ -87,11 +89,11 @@ if __name__ == "__main__":
         args.device = "cuda" if torch.cuda.is_available() else "cpu"
         
     
-    train_set = ChestXray14(images_path="./images", list_path=args.train_list, num_class=args.num_classes, 
+    train_set = ChestXray14(images_path=args.dataset_path, list_path=args.train_list, num_class=args.num_classes, 
                             transform=my_transform(normalize=args.normalization, mode="train"))
-    val_set = ChestXray14(images_path="./images", list_path=args.val_list, num_class=args.num_classes, 
+    val_set = ChestXray14(images_path=args.dataset_path, list_path=args.val_list, num_class=args.num_classes, 
                           transform=my_transform(normalize=args.normalization, mode="val"))
-    test_set = ChestXray14(images_path="./images", list_path=args.test_list, num_class=args.num_classes, 
+    test_set = ChestXray14(images_path=args.dataset_path, list_path=args.test_list, num_class=args.num_classes, 
                            transform=my_transform(normalize=args.normalization, mode="test"))
     
     train_loader = DataLoader(dataset=train_set, batch_size=24, shuffle=True)

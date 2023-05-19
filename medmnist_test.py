@@ -67,6 +67,8 @@ parser.add_argument("--test_list", type=str, default=None,
                     help="file for test list")
 parser.add_argument("--in_chans", type=int, default=1, 
                     help="input data channel numbers")
+parser.add_argument("--dataset_path", type=str, default="./images",
+                    help="dataset path")
 
 args = parser.parse_args()
 

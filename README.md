@@ -15,7 +15,7 @@ This repository contains the following files and directories:
   - `train_test.py`: The main Python script for the project.
   - `utils.py`: Utility functions used by the main script.
   - `models.py`: Creates the model by using the [timm module](https://timm.fast.ai/).
-  - `dataloader.py`: dataloader scripts for diverse Chest X-ray datasets.
+  - `dataloader.py`: Dataloader scripts for diverse Chest X-ray datasets.
   - `medmnist_test.py`: Test script with ChestMNIST dataset, equivalent to ChestXray14, to lessen the GPU needs while developing code.
 - `requirements.txt`: Requirement libraries to use this repo.
 - `.gitignore`: File specifying which files to ignore in version control.
@@ -34,13 +34,12 @@ python train_test.py \
 --model_name resnet18 \
 --isinit \
 --normalization imagenet \
+--batch_size 24 \
 --base_lr 0.01 \
 --max_epochs 100 \
 --num_trial 10 \
 --in_chans 3 \
 --train_list ./Xray14_train_official.txt \
 --val_list ./Xray14_val_official.txt \
---test_list ./Xray14_test_official.txt \
---lr 0.01 \
---batch_size 24
+--test_list ./Xray14_test_official.txt
 ```

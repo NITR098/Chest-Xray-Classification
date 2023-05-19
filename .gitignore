@@ -161,3 +161,4 @@ cython_debug/
 
 /F:/GitHub Repos/Chest-Xray-Classification/*
 !/F:/GitHub Repos/Chest-Xray-Classification/*.py
+!/F:/GitHub Repos/Chest-Xray-Classification/images/

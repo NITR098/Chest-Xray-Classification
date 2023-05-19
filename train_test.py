@@ -90,9 +90,9 @@ if __name__ == "__main__":
     train_set = ChestXray14(images_path="./images", list_path=args.train_list, num_class=args.num_classes, 
                             transform=my_transform(normalize=args.normalization, mode="train"))
     val_set = ChestXray14(images_path="./images", list_path=args.val_list, num_class=args.num_classes, 
-                            transform=my_transform(normalize=args.normalization, mode="val"))
+                          transform=my_transform(normalize=args.normalization, mode="val"))
     test_set = ChestXray14(images_path="./images", list_path=args.test_list, num_class=args.num_classes, 
-                            transform=my_transform(normalize=args.normalization, mode="test"))
+                           transform=my_transform(normalize=args.normalization, mode="test"))
     
     train_loader = DataLoader(dataset=train_set, batch_size=24, shuffle=True)
     val_loader = DataLoader(dataset=val_set, batch_size=24, shuffle=False)

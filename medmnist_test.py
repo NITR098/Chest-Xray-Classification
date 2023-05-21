@@ -107,6 +107,7 @@ if __name__ == "__main__":
         val_set = DataClass(split="val", transform=data_transform, download=True)
         test_set = DataClass(split="test", transform=data_transform, download=True)
         
+        
         _, mini_train_set = random_split(val_set, (0.8, 0.2))
         print(len(mini_train_set))
         train_loader = DataLoader(dataset=mini_train_set, batch_size=16, shuffle=True)

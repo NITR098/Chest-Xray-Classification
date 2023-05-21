@@ -35,7 +35,7 @@ python experiments.py \
 --dataset_name ChestXray14 \
 --dataset_path /path/to/dataset \
 --batch_size 24 \
---max_epochs 100 \
+--epochs 100 \
 --num_trial 5 \
 --in_chans 3 \
 ```
@@ -48,8 +48,8 @@ python train_test.py \
 --dataset_path /path/to/dataset \
 --normalization imagenet \
 --batch_size 24 \
---base_lr 0.01 \
---max_epochs 100 \
+--lr 0.01 \
+--epochs 100 \
 --num_trial 10 \
 --in_chans 3 \
 --train_list ./Xray14_train_official.txt \

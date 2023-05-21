@@ -35,7 +35,7 @@ parser.add_argument("--num_classes", type=int,
                     default=14, help='number of labels')
 parser.add_argument("--output_dir", type=str,
                     help='output dir')
-parser.add_argument("--epochs", type=int, default=4,
+parser.add_argument("--epochs", type=int, default=100,
                     help='maximum epoch number to train')
 parser.add_argument("--batch_size", type=int, default=24,
                     help='batch_size per gpu')
@@ -45,7 +45,7 @@ parser.add_argument("--seed", type=int, default=1234,
                     help='random seed')
 parser.add_argument("--exp_name", type=str, default="exper",
                     help="experiment name")
-parser.add_argument("--num_trial", type=int, default=3,
+parser.add_argument("--num_trial", type=int, default=5,
                     help="number of trials")
 parser.add_argument("--device", type=str, default="cuda",
                     help="cpu|cuda")
@@ -55,9 +55,9 @@ parser.add_argument("--val_list", type=str, default="./Xray14_val_official.txt",
                     help="file for validation list")
 parser.add_argument("--test_list", type=str, default="./Xray14_test_official.txt",
                     help="file for test list")
-parser.add_argument("--in_chans", type=int, default=1, 
+parser.add_argument("--in_chans", type=int, default=3, 
                     help="input data channel numbers")
-parser.add_argument("--dataset_path", type=str, default="./images",
+parser.add_argument("--dataset_path", type=str, default="/cabinet/reza/datasets/NIH_Chest_X_rays/images/",
                     help="dataset path")
 parser.add_argument("--valid_start_epoch", type=int, default=79,
                     help="the validation process starts from this epoch")

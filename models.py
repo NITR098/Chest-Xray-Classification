@@ -23,29 +23,30 @@ def model_chest_xray(model_name ,init_weight, num_class, in_chans):
     return model
 
 def build_model(args):
-    model = None
-    print("Creating model...")
+    model = None    
+    pretrained = True if args.init=="ImageNet" else False
+    print(f"Creating model {args.model_name} with {args.init} weights.....")
     if args.model_name == "resnet18":
         model = create_model(model_name=args.model_name,
-                            pretrained=args.init,
+                            pretrained=pretrained,
                             num_classes=args.num_classes,
                             in_chans=args.in_chans)
     
     elif args.model_name == "resnet50":
         model = create_model(model_name=args.model_name,
-                            pretrained=args.init,
+                            pretrained=pretrained,
                             num_classes=args.num_classes,
                             in_chans=args.in_chans)
         
     elif args.model_name == "swin_tiny":
         model = create_model(model_name="swin_tiny_patch4_window7_224",
-                            pretrained=args.init,
+                            pretrained=pretrained,
                             num_classes=args.num_classes,
                             in_chans=args.in_chans)
         
     elif args.model_name == "swin_base":
         model = create_model(model_name="swin_base_patch4_window7_224",
-                            pretrained=args.init,
+                            pretrained=pretrained,
                             num_classes=args.num_classes,
                             in_chans=args.in_chans)
         

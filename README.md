@@ -14,6 +14,7 @@ This repository contains the following files and directories:
 - `README.md`: The main README file providing an overview of the repository.
 - Directory containing the source code files.
   - `train_test.py`: The main Python script for the project.
+  - `experiments.py`: Run all experiments at once.
   - `utils.py`: Utility functions used by the main script.
   - `models.py`: Creates the model by using the [timm module](https://timm.fast.ai/).
   - `dataloader.py`: Dataloader scripts for diverse Chest X-ray datasets.
@@ -28,6 +29,17 @@ This repository contains the following files and directories:
 
 ---
 Run scripts as follows:
+
+```bash
+python experiments.py \
+--dataset_name ChestXray14 \
+--dataset_path /path/to/dataset \
+--batch_size 24 \
+--max_epochs 100 \
+--num_trial 5 \
+--in_chans 3 \
+```
+---
 
 ```bash
 python train_test.py \

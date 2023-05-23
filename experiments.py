@@ -17,7 +17,8 @@ from torch.utils.data import random_split, DataLoader
 from torchvision import transforms as T
 
 
-from dataloader import ChestXray14, JSRT
+# from dataloader import ChestXray14, JSRT
+from dataloader_v2 import ChestXray14
 from run_classification import run_experiments
 from utils import seed_it_all, my_transform
 
@@ -35,7 +36,7 @@ parser.add_argument("--num_classes", type=int,
                     default=14, help='number of labels')
 parser.add_argument("--output_dir", type=str,
                     help='output dir')
-parser.add_argument("--epochs", type=int, default=100,
+parser.add_argument("--epochs", type=int, default=50,
                     help='maximum epoch number to train')
 parser.add_argument("--batch_size", type=int, default=24,
                     help='batch_size per gpu')
@@ -63,7 +64,7 @@ parser.add_argument("--valid_start_epoch", type=int, default=79,
                     help="the validation process starts from this epoch")
 
 # Optimizer
-parser.add_argument("--opt", type=str, default="adamw",
+parser.add_argument("--opt", type=str, default="sgd",
                     help="Optimizer")
 parser.add_argument("--lr", type=float,  default=1e-2,
                     help='classification network learning rate')

@@ -17,8 +17,8 @@ from torch.utils.data import random_split, DataLoader
 from torchvision import transforms as T
 
 
-# from dataloader import ChestXray14, JSRT
-from dataloader_v2 import ChestXray14
+from dataloader import ChestXray14, JSRT
+# from dataloader_v2 import ChestXray14
 from run_classification import run_experiments
 from utils import seed_it_all, my_transform
 
